@@ -1,4 +1,4 @@
 #!/bin/bash
+sudo yum install -y nodejs npm
 cd /home/ec2-user
-pm2 stop all || true
 rm -rf next-js-app
