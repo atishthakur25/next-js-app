@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ec2-user/your-app-folder
+cd /home/ec2-user/next-js-app
 npm install
