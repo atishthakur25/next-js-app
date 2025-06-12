@@ -3,9 +3,13 @@
 echo "Checking for existing npm install processes..."
 pkill -f "npm install" || true
 
-sudo chown -R ubuntu:ubuntu /home/ubuntu/next-js-app
-
 cd /home/ubuntu/next-js-app
+
+# Fix permission issues
+sudo chown -R ubuntu:ubuntu .
+
+# Optional: clean install if builds were cached
+rm -rf node_modules .next
 
 # Run npm install if node_modules is missing
 if [ ! -d "node_modules" ]; then
