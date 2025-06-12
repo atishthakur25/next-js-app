@@ -13,8 +13,12 @@ rm -rf node_modules .next
 
 # Run npm install if node_modules is missing
 if [ ! -d "node_modules" ]; then
-  echo "Installing dependencies..."
-  npm install
+    echo "Installing dependencies..."
+    npm install
 else
-  echo "Dependencies already installed"
+    echo "Dependencies already installed"
 fi
+
+# Build the Next.js application
+echo "Building the application..."
+npm run build
