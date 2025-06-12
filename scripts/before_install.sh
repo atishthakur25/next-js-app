@@ -1,10 +1,7 @@
 #!/bin/bash
 cd /home/ubuntu/next-js-app
 pm2 stop all || true
-#!/bin/bash
 
-# Stop running processes
-pm2 stop all || true
-
-# Remove existing app files to avoid conflict
+# Remove all existing files and hidden files/folders in the directory
 rm -rf /home/ubuntu/next-js-app/*
+rm -rf /home/ubuntu/next-js-app/.* 2>/dev/null || true
