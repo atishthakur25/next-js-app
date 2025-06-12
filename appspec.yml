@@ -2,25 +2,17 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/next-js-app
-
+    destination: /home/ubuntu/next-js-app
 hooks:
-  ApplicationStop:
-    - location: scripts/stop.sh
-      timeout: 20
-      runas: ec2-user
-
   BeforeInstall:
     - location: scripts/before_install.sh
-      timeout: 20
-      runas: ec2-user
-
+      timeout: 300
+      runas: ubuntu
   AfterInstall:
     - location: scripts/after_install.sh
-      timeout: 20
-      runas: ec2-user
-
+      timeout: 300
+      runas: ubuntu
   ApplicationStart:
-    - location: scripts/start_server.sh
-      timeout: 20
-      runas: ec2-user
+    - location: scripts/start.sh
+      timeout: 300
+      runas: ubuntu
