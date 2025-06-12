@@ -1,3 +1,9 @@
 #!/bin/bash
 cd /home/ubuntu/next-js-app
-pm2 start npm --name "next-app" -- start
+
+# Check if pm2 process exists
+if pm2 describe next-app > /dev/null; then
+  pm2 restart next-app
+else
+  pm2 start npm --name "next-app" -- start
+fi
