@@ -6,7 +6,7 @@ pkill -f "npm install" || true
 cd /home/ubuntu/next-js-app
 
 # Fix permission issues
-sudo chown -R ubuntu:ubuntu .
+sudo chown -R ubuntu:ubuntu . 
 
 # Optional: clean install if builds were cached
 rm -rf node_modules .next
